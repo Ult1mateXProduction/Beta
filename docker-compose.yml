@@ -1,0 +1,13 @@
+version: '3.5'
+
+services:
+  frontend:
+    container_name: frontend_production
+    hostname: frontend.production
+    build:
+      context: './'
+    ports:
+      - "80:80"
+    volumes:
+      - '.:/home/app'
+    network_mode: bridge
