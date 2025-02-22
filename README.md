@@ -1,3 +1,3 @@
-<h3>Модуль Б</h3>
+<h3>Vue3 Project Application</h3>
 <hr>
-<p>Vue3.js CRUD SPA</p>
+<p></p>
