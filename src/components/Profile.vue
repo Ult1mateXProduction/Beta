@@ -10,16 +10,8 @@
       {{content.id}}
     </p>
     <p>
-      <strong>Почта:</strong>
-      {{content.email}}
-    </p>
-    <p>
-      <strong>Имя:</strong>
-      {{content.name}}
-    </p>
-    <p>
-      <strong>Фамилия:</strong>
-      {{content.last_name}}
+      <strong>Имя_Пользователя:</strong>
+      {{content.username}}
     </p>
   </div>
 </template>
@@ -42,7 +34,7 @@ export default {
   mounted() {
     AuthService.getUser().then(
         (response) => {
-          this.content = response.data;
+          this.content = response.data.usert;
         },
         (error) => {
           this.content =

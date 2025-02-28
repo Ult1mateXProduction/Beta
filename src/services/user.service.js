@@ -1,7 +1,7 @@
 import axios from 'axios';
 import authHeader from './auth-header';
 
-const API_URL = 'https://ultimatex.tech:9000/api/';
+const API_URL = 'http://ws.ultimatex.tech:8000/api';
 
 class UserService {
   /*getSomething() {
