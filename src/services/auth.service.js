@@ -1,13 +1,13 @@
 import axios from 'axios';
 import authHeader from "@/services/auth-header";
 
-const API_URL = 'https://ultimatex.tech:9000/api/';
+const API_URL = 'http://ws.ultimatex.tech:8000/api/';
 
 class AuthService {
   login(user) {
     return axios
-      .post(API_URL + 'authorization', {
-        email: user.email,
+      .post(API_URL + 'login', {
+        username: user.username,
         password: user.password
       })
       .then(response => {
@@ -24,11 +24,9 @@ class AuthService {
   }
 
   register(user) {
-    return axios.post(API_URL + 'registration', {
-      email: user.email,
+    return axios.post(API_URL + 'register', {
+      username: user.username,
       password: user.password,
-      name: user.name,
-      last_name: user.last_name
     });
   }
 

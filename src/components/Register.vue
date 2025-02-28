@@ -9,24 +9,14 @@
       <Form @submit="handleRegister" :validation-schema="schema">
         <div v-if="!successful">
           <div class="form-group">
-            <label for="email">Email</label>
-            <Field name="email" type="email" class="form-control" />
-            <ErrorMessage name="email" class="error-feedback" />
+            <label for="username">UserName</label>
+            <Field name="username" type="username" class="form-control" />
+            <ErrorMessage name="username" class="error-feedback" />
           </div>
           <div class="form-group">
             <label for="password">Password</label>
             <Field name="password" type="password" class="form-control" />
             <ErrorMessage name="password" class="error-feedback" />
-          </div>
-          <div class="form-group">
-            <label for="name">First Name</label>
-            <Field name="name" type="text" class="form-control" />
-            <ErrorMessage name="name" class="error-feedback" />
-          </div>
-          <div class="form-group">
-            <label for="last_name">Last Name</label>
-            <Field name="last_name" type="text" class="form-control" />
-            <ErrorMessage name="last_name" class="error-feedback" />
           </div>
           <div class="form-group">
             <button class="btn btn-primary btn-block" :disabled="loading">
@@ -64,26 +54,15 @@ export default {
   },
   data() {
     const schema = yup.object().shape({
-      email: yup
+      username: yup
         .string()
-        .required("Email is required!")
-        .email("Email is invalid!")
+        .required("UserName is required!")
         .max(50, "Must be maximum 50 characters!"),
       password: yup
         .string()
         .required("Password is required!")
         .min(6, "Must be at least 6 characters!")
         .max(40, "Must be maximum 40 characters!"),
-      name: yup
-          .string()
-          .required("First Name is required!")
-          .min(3, "Must be at least 3 characters!")
-          .max(20, "Must be maximum 20 characters!"),
-      last_name: yup
-          .string()
-          .required("Last Name is required!")
-          .min(3, "Must be at least 3 characters!")
-          .max(20, "Must be maximum 20 characters!"),
     });
 
     return {
